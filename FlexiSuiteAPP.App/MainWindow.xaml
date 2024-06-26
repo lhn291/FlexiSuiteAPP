@@ -4,9 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlexiSuiteAPP.App"
+        xmlns:views="clr-namespace:FlexiSuiteAPP.App.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="MainWindow" 
+        Height="1080" 
+        Width="1920">
+    <Grid x:Name="MainGrid">
+        <Button Content="Go to EmptyView" Click="OnNavigateButtonClick" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Grid>
 </Window>

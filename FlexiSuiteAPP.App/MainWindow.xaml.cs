@@ -1,13 +1,5 @@
-﻿using System.Text;
+﻿using FlexiSuiteAPP.App.Views;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FlexiSuiteAPP.App
 {
@@ -19,6 +11,16 @@ namespace FlexiSuiteAPP.App
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void OnNavigateButtonClick(object sender, RoutedEventArgs e)
+        {
+            // Tạo một instance của EmptyView
+            var emptyView = new EmptyView();
+
+            // Xóa bỏ các phần tử hiện tại trong MainGrid và thêm EmptyView
+            MainGrid.Children.Clear();
+            MainGrid.Children.Add(emptyView);
         }
     }
 }
