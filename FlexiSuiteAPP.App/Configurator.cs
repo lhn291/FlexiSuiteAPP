@@ -1,21 +1,22 @@
-﻿using FlexiSuiteAPP.App.ViewModels;
+﻿using FlexiSuiteAPP.App.Services;
 using FlexiSuiteAPP.App.Views;
+using FlexiSuiteAPP.App.ViewModels;
+using FlexiSuiteAPP.App.Views.Popups;
+using FlexiSuiteAPP.App.ViewModels.Popups;
 
 namespace FlexiSuiteAPP.App
 {
     public static class Configurator
     {
+        public static NavigationService? NavigationService { get; private set; }
+
         public static void Configure()
         {
-            // Đăng ký các view và viewmodel
-            RegisterViewsAndViewModels();
-        }
+            NavigationService = new NavigationService();
 
-        private static void RegisterViewsAndViewModels()
-        {
-            // Đăng ký các view và viewmodel ở đây
-            ServiceProvider.Instance.RegisterService(typeof(EmptyView), typeof(EmptyViewModel));
-            // Đăng ký các view và viewmodel khác nếu cần
+            NavigationService.RegisterView("EmptyView", typeof(EmptyView), typeof(EmptyViewModel));
+
+            NavigationService.RegisterPopup("CustomPopup", typeof(CustomPopup), typeof(CustomPopupViewModel));
         }
     }
 }

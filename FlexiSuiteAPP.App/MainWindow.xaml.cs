@@ -1,26 +1,26 @@
-﻿using FlexiSuiteAPP.App.Views;
+﻿using FlexiSuiteAPP.App.Services;
 using System.Windows;
 
 namespace FlexiSuiteAPP.App
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly NavigationService _navigationService;
+
         public MainWindow()
         {
             InitializeComponent();
+            _navigationService = Configurator.NavigationService!;
         }
 
         private void OnNavigateButtonClick(object sender, RoutedEventArgs e)
         {
-            // Tạo một instance của EmptyView
-            var emptyView = new EmptyView();
+            _navigationService.NavigateTo("EmptyView", MainContent);
+        }
 
-            // Xóa bỏ các phần tử hiện tại trong MainGrid và thêm EmptyView
-            MainGrid.Children.Clear();
-            MainGrid.Children.Add(emptyView);
+        private void OnShowPopupButtonClick(object sender, RoutedEventArgs e)
+        {
+            _navigationService.ShowPopup("CustomPopup");
         }
     }
 }

@@ -4,12 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlexiSuiteAPP.App"
-        xmlns:views="clr-namespace:FlexiSuiteAPP.App.Views"
         mc:Ignorable="d"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen"
         Title="MainWindow" 
-        Height="1080" 
-        Width="1920">
-    <Grid x:Name="MainGrid">
-        <Button Content="Go to EmptyView" Click="OnNavigateButtonClick" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        Height="980"
+        Width="1820"
+        MinHeight="500"
+        MinWidth="1000"
+        MaxHeight="980"
+        MaxWidth="1820">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Button Content="Navigate to EmptyView" Click="OnNavigateButtonClick" Margin="5" />
+            <Button Content="Show Popup" Click="OnShowPopupButtonClick" Margin="5" />
+        </StackPanel>
+
+        <ContentControl x:Name="MainContent" Grid.Row="1" />
     </Grid>
 </Window>

@@ -10,11 +10,7 @@ namespace FlexiSuiteAPP.App
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
             Configurator.Configure();
-
-            var mainWindow = new MainWindow();
-            mainWindow.Show();
         }
     }
 }

@@ -5,8 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FlexiSuiteAPP.App.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" 
-             d:DesignWidth="1920">
+             Height="980"
+             Width="1820"
+             MaxHeight="980"
+             MaxWidth="1820">
     <Grid>
         <!-- Nội dung UI của EmptyView -->
         <TextBlock Text="This is EmptyView" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="50"/>
